@@ -5,7 +5,7 @@ namespace GraphQL_demo_api;
 
 public class Query
 {
-    public IQueryable<Car> GetCars([Service] AppDbContext context)
+    public IQueryable<Car> GetCar([Service] AppDbContext context)
     {
         return context.Cars;
     }
