@@ -13,6 +13,6 @@ builder.Services
     .AddQueryType<Query>();
 
 var app = builder.Build();
-app.MapGet("/", () => "Hello World!");
+app.MapGraphQL();
 
 app.Run();
