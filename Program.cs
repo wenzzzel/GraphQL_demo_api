@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddDbContext<AppDbContext>(
+builder.Services.AddPooledDbContextFactory<AppDbContext>(
     opt => opt.UseSqlServer(builder.Configuration.GetConnectionString("AzureSql"))
 );
 
