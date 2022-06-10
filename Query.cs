@@ -6,8 +6,9 @@ namespace GraphQL_demo_api;
 public class Query
 {
     [UseDbContext(typeof(AppDbContext))]
-    public IQueryable<Car> GetCar([ScopedService] AppDbContext context)
+    [UseProjection]
+    public IQueryable<Driver> GetDriver([ScopedService] AppDbContext context)
     {
-        return context.Cars;
+        return context.Drivers;
     }
 }
