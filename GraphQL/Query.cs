@@ -13,7 +13,6 @@ public class Query
     }
 
     [UseDbContext(typeof(AppDbContext))]
-    [UseProjection]
     public IQueryable<Car> GetCar([ScopedService] AppDbContext context)
     {
         return context.Cars;
