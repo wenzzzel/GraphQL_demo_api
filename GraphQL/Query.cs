@@ -1,7 +1,7 @@
 using GraphQL_demo_api.Data;
 using GraphQL_demo_api.Models;
 
-namespace GraphQL_demo_api;
+namespace GraphQL_demo_api.GraphQL;
 
 public class Query
 {

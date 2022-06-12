@@ -1,4 +1,4 @@
-using GraphQL_demo_api;
+using GraphQL_demo_api.GraphQL;
 using GraphQL_demo_api.Data;
 using Microsoft.EntityFrameworkCore;
 
