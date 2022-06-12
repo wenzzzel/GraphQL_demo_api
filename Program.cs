@@ -1,5 +1,6 @@
 using GraphQL_demo_api.GraphQL;
 using GraphQL_demo_api.Data;
+using GraphQL_demo_api.GraphQL.Drivers;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -11,6 +12,7 @@ builder.Services.AddPooledDbContextFactory<AppDbContext>(
 builder.Services
     .AddGraphQLServer()
     .AddQueryType<Query>()
+    .AddType<DriverType>()
     .AddProjections();
 
 var app = builder.Build();
