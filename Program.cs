@@ -13,6 +13,7 @@ builder.Services
     .AddGraphQLServer()
     .AddQueryType<Query>()
     .AddType<DriverType>()
+    .AddType<CarType>()
     .AddProjections();
 
 var app = builder.Build();
