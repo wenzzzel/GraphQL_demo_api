@@ -12,6 +12,7 @@ builder.Services.AddPooledDbContextFactory<AppDbContext>(
 builder.Services
     .AddGraphQLServer()
     .AddQueryType<Query>()
+    .AddMutationType<Mutation>()
     .AddType<DriverType>()
     .AddType<CarType>()
     .AddProjections();
