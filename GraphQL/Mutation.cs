@@ -1,4 +1,5 @@
 using GraphQL_demo_api.Data;
+using GraphQL_demo_api.GraphQL.Cars;
 using GraphQL_demo_api.GraphQL.Drivers;
 using GraphQL_demo_api.Models;
 
@@ -17,5 +18,21 @@ public class Mutation
         await context.SaveChangesAsync();
 
         return new AddDriverPayload(driver);
+    }
+
+    [UseDbContext(typeof(AppDbContext))]
+    public async Task<AddCarPayload> AddCarAsync(AddCarInput input, [ScopedService] AppDbContext context)
+    {
+        var car = new Car{
+            Brand = input.Brand,
+            Name = input.Name,
+            Description = input.Description,
+            DriverId = input.DriverId
+        };
+
+        context.Cars.Add(car);
+        await context.SaveChangesAsync();
+
+        return new AddCarPayload(car);
     }
 }
